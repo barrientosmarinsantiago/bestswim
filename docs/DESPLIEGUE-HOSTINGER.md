@@ -142,6 +142,28 @@ curl -s https://bestswim.es/es | grep -c ld+json  # 1 -> datos estructurados pre
 En navegador: la home carga, `/es/natacion/entrenamiento` muestra el extracto y pide acceso
 al llegar al límite, y el checkout del Pase Semanal abre Stripe.
 
+### Aviso: Hostinger sirve su propio robots.txt en el dominio de preview
+
+En el despliegue de prueba a `*.hostingersite.com` comprobamos que `/robots.txt` **no** es
+el que genera `src/app/robots.ts`, sino uno inyectado por Hostinger:
+
+```
+User-agent: Googlebot
+Disallow: /
+
+User-agent: *
+Allow: /
+```
+
+Es decir: el servidor intercepta esa ruta en los dominios temporales. Al pasar al dominio
+definitivo hay que **verificar que `/robots.txt` devuelve el nuestro** (el que lleva las
+líneas `Sitemap:` y `Host:`). Si siguiera saliendo el de Hostinger, el sitemap nunca se
+anunciaría y habría que desactivar esa inyección desde el panel.
+
+La etiqueta `<meta name="robots">` sí sale del código y no la toca nadie, que es por lo que
+conviene tener las dos: `NEXT_PUBLIC_NOINDEX=1` cerró el preview aunque el robots.txt del
+servidor dejaba pasar a todo lo que no fuera Googlebot.
+
 Después, y solo después, seguir `docs/SEO-INDEXACION.md` sobre el dominio ya en producción
 con HTTPS.
 
