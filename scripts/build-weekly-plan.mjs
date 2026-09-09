@@ -67,7 +67,19 @@ const mesocycleOf = (w) => Math.ceil(w / 4);
 const phaseOf = (w) => (isDeload(w) ? "descarga" : ["introduccion", "carga", "pico"][(w - 1) % 4]);
 
 const poolFor = (level) => catalog.filter((s) => (s.level === level || s.level === "todos") && !s.isTest);
-const testsFor = (level) => catalog.filter((s) => s.isTest && (s.level === level || s.level === "todos"));
+/**
+ * Tests del nivel primero, genéricos solo como respaldo.
+ *
+ * Por criterio de entrenamiento: el test de 20x50 avanzado no mide nada útil en un
+ * principiante. Y por una razón práctica — `training_sessions.source_key` es único en
+ * toda la tabla, así que si los tres niveles tiran del mismo test genérico la carga
+ * choca. Cada nivel tiene 2 tests propios, justo los que consumen 8 semanas.
+ */
+const testsFor = (level) => {
+  const propios = catalog.filter((s) => s.isTest && s.level === level);
+  const genericos = catalog.filter((s) => s.isTest && s.level === "todos");
+  return [...propios, ...genericos];
+};
 
 /**
  * Se planifica por MESOCICLO completo, no semana a semana.
@@ -122,9 +134,17 @@ function buildLevel(level) {
           rows.push({ week: w, day: slot.day, slot: "test", label: "Test de control", session: t, deload: true });
           continue;
         }
-        const short = [...pool]
-          .filter((s) => slot.methods.includes(s.method))
-          .sort((a, b) => (a.volumeM ?? 9e9) - (b.volumeM ?? 9e9))[0] ?? null;
+        // La descarga también respeta el histórico. Antes cogía la más corta del slot sin
+        // mirar si ya se había usado, y repetía: además de aburrir, `training_sessions`
+        // tiene índice único sobre `source_key`, así que un duplicado no llegaba a
+        // cargarse — el INSERT entero fallaba.
+        let cands = pool.filter((s) => slot.methods.includes(s.method) && !used.has(s.id));
+        if (!cands.length) {
+          for (const s of pool) if (slot.methods.includes(s.method)) used.delete(s.id);
+          cands = pool.filter((s) => slot.methods.includes(s.method));
+        }
+        const short = [...cands].sort((a, b) => (a.volumeM ?? 9e9) - (b.volumeM ?? 9e9))[0] ?? null;
+        if (short) used.add(short.id);
         rows.push({ week: w, day: slot.day, slot: slot.key, label: slot.label, session: short, deload: true });
       }
     }
@@ -173,6 +193,26 @@ function main() {
     return;
   }
 
+  // `training_sessions` tiene un índice único sobre `source_key`, así que una sesión
+  // repetida no produce una fila de más: revienta el INSERT completo. Mejor fallar aquí,
+  // con el duplicado señalado, que descubrirlo cuando Postgres rechaza la carga entera.
+  const seen = new Map();
+  const dupes = [];
+  for (const level of LEVELS) {
+    for (const r of plans[level]) {
+      if (!r.session) continue;
+      const key = r.session.id;
+      if (seen.has(key)) dupes.push(`${key}  (sem ${seen.get(key)} y sem ${r.week}, nivel ${level})`);
+      else seen.set(key, r.week);
+    }
+  }
+  if (dupes.length) {
+    console.error(`\n✗ ${dupes.length} sesión(es) repetida(s); source_key es único en Supabase:`);
+    for (const d of dupes) console.error("   - " + d);
+    console.error("\nAmplía el catálogo del slot afectado o reduce --weeks.\n");
+    process.exit(1);
+  }
+
   const values = [];
   for (const level of LEVELS) {
     for (const r of plans[level]) {
@@ -209,7 +249,7 @@ function main() {
     values.join(",\n") + ";",
     "",
     "-- Asocia cada sesion al grupo de su nivel",
-    "insert into training_session_groups (training_session_id, content_group_id)",
+    "insert into training_session_groups (training_session_id, group_id)",
     "select ts.id, cg.id",
     "  from training_sessions ts",
     "  join content_groups cg on cg.slug = 'nivel-' || ts.difficulty",

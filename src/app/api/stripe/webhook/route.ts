@@ -84,17 +84,23 @@ async function upsertSubscription(subscription: Stripe.Subscription) {
 }
 
 /**
- * Concede el Pase Semanal: 7 dias de acceso a partir de un pago unico de 1 EUR.
+ * Concede el Pase Semanal: 7 dias de acceso LIMITADO por un pago unico de 1 EUR.
  *
- * Se escribe en `subscriptions` y no en `profiles.access_tier` porque la entitlement
- * del pase CADUCA, y esta tabla ya lleva la fecha de fin que `getServerContentAccessLevel`
- * comprueba. Marcarlo en el perfil daria acceso indefinido hasta que alguien lo revocara
- * a mano. El estado es `trialing`, que ya cuenta como premium y ademas deja el pase
- * distinguible de una suscripcion de verdad en cualquier informe.
+ * El euro es un filtro de entrada, no una compra de Premium: el pase da exactamente el
+ * mismo nivel que daba el antiguo trial gratuito (`access_tier = 'free'`, tope de
+ * unidades de contenido), solo que durante 7 dias y previo pago.
  *
- * La clave es el id de la sesion de checkout: unica por compra, asi que el upsert es
- * idempotente si Stripe reintenta el evento.
+ * Por eso NO se escribe en `subscriptions`: cualquier fila ahi con estado activo o
+ * trialing cuenta como Premium tanto en `getServerContentAccessLevel` como en la funcion
+ * `has_active_subscription()` de Supabase, y el pase regalaria la plataforma entera.
+ * Lo que se mueve es `trial_ends_at`, que es la ventana que ya consulta
+ * `has_portal_access()` para dejar entrar al portal.
+ *
+ * Se extiende desde la fecha mayor entre hoy y el vencimiento vigente, para que comprar
+ * dos pases seguidos sume dos semanas en vez de tirar la que quedaba.
  */
+const WEEKLY_PASS_DAYS = 7;
+
 async function grantWeeklyPass(session: Stripe.Checkout.Session) {
   const supabase = getSupabaseAdminClient();
   if (!supabase) throw new Error("Supabase admin client is not configured.");
@@ -111,24 +117,26 @@ async function grantWeeklyPass(session: Stripe.Checkout.Session) {
     userId = profile?.id;
   }
 
-  if (!userId || !customerId) return;
+  if (!userId) return;
 
-  const WEEKLY_PASS_DAYS = 7;
-  const endsAt = new Date(Date.now() + WEEKLY_PASS_DAYS * 24 * 60 * 60 * 1000).toISOString();
+  const { data: current } = await supabase
+    .from("profiles")
+    .select("trial_ends_at")
+    .eq("id", userId)
+    .maybeSingle();
 
-  await supabase.from("subscriptions").upsert(
-    {
-      user_id: userId,
-      stripe_customer_id: customerId,
-      stripe_subscription_id: session.id,
-      stripe_price_id: null,
-      status: "trialing",
-      current_period_end: endsAt,
-      cancel_at_period_end: true,
+  const currentEnd = current?.trial_ends_at ? Date.parse(current.trial_ends_at) : 0;
+  const from = Number.isFinite(currentEnd) && currentEnd > Date.now() ? currentEnd : Date.now();
+  const endsAt = new Date(from + WEEKLY_PASS_DAYS * 24 * 60 * 60 * 1000).toISOString();
+
+  await supabase
+    .from("profiles")
+    .update({
+      trial_ends_at: endsAt,
+      ...(customerId ? { stripe_customer_id: customerId } : {}),
       updated_at: new Date().toISOString()
-    },
-    { onConflict: "stripe_subscription_id" }
-  );
+    })
+    .eq("id", userId);
 }
 
 export async function POST(request: NextRequest) {

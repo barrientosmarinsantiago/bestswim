@@ -13,7 +13,13 @@ Best Swim uses Stripe-hosted Checkout for Premium subscriptions and Stripe Custo
 
    It must be a one-time price, not a recurring one. The checkout route sends the
    weekly plan in `mode: "payment"`, and Stripe rejects a recurring price there.
-   The pass does not auto-renew: access is granted for 7 days and then lapses.
+
+   The pass buys the **same limited tier** the old free trial gave, not Premium: the
+   1 EUR is an entry filter, not an upgrade. It is granted by moving
+   `profiles.trial_ends_at` 7 days forward — never by writing to `subscriptions`,
+   because any active row there counts as Premium both in the app and in Supabase's
+   `has_active_subscription()`. Buying two passes in a row adds two weeks rather than
+   discarding the remaining one.
 4. Copy the three Price IDs into the app environment:
 
 ```env
@@ -70,6 +76,10 @@ Use test-mode keys and test-mode Price IDs locally.
 3. The authenticated user clicks the Stripe Checkout button.
 4. Stripe redirects back to `/clientes?checkout=success`.
 5. The webhook stores the subscription in `public.subscriptions`. The Weekly Pass has no
-   subscription: it arrives as a one-off payment, so the entitlement is granted from the
-   `checkout.session.completed` event and expires after 7 days.
+   subscription: it arrives as a one-off payment, so `grantWeeklyPass` extends
+   `profiles.trial_ends_at` from the `checkout.session.completed` event.
+
+Note: `profiles.trial_ends_at` used to default to `now() + 15 days`, which handed every
+signup a free fortnight and would have left nobody with a reason to pay the 1 EUR. It now
+defaults to `now()` — the window is closed on signup and only the pass opens it.
 6. The Customer Portal button lets members manage payment methods, invoices, and cancellation.
