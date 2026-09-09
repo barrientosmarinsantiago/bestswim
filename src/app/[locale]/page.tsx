@@ -4,6 +4,7 @@ import { LandingPage } from "@/components/landing/landing-page";
 import { defaultLocale, isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPriceLabel } from "@/lib/pricing";
+import { graph, organizationSchema, serviceSchema, websiteSchema } from "@/lib/schema";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bestswim.es";
 
@@ -69,15 +70,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const locale = resolvedParams.locale as Locale;
   const dictionary = getDictionary(locale);
 
+  const jsonLd = graph([
+    organizationSchema(),
+    websiteSchema(locale, dictionary.meta.description),
+    serviceSchema(locale, dictionary.meta.description)
+  ]);
+
   return (
-    <LandingPage
-      dictionary={dictionary}
-      locale={locale}
-      priceLabels={{
-        weekly: getPriceLabel("weekly", dictionary.pricing.weeklyPass.price),
-        monthly: getPriceLabel("monthly", dictionary.pricing.monthlyFallback),
-        annual: getPriceLabel("annual", dictionary.pricing.annualFallback)
-      }}
-    />
+    <>
+      {/* Un solo bloque con @graph: Google prefiere los nodos relacionados por @id
+          antes que varios <script> sueltos describiendo la misma entidad. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <LandingPage
+        dictionary={dictionary}
+        locale={locale}
+        priceLabels={{
+          weekly: getPriceLabel("weekly", dictionary.pricing.weeklyPass.price),
+          monthly: getPriceLabel("monthly", dictionary.pricing.monthlyFallback),
+          annual: getPriceLabel("annual", dictionary.pricing.annualFallback)
+        }}
+      />
+    </>
   );
 }

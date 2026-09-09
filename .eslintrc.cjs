@@ -28,6 +28,11 @@ module.exports = {
   ignorePatterns: [".next/", "node_modules/", "next-env.d.ts"],
   rules: {
     ...nextPlugin.configs.recommended.rules,
+    // La regla base de ESLint no entiende las firmas de tipo de TypeScript: da por
+    // "declarados y no usados" los nombres de parametro de un `(a: string) => string`,
+    // que son solo documentacion. Se cambia por la version con conocimiento de tipos.
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
     "@next/next/no-img-element": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
