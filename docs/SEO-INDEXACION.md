@@ -24,6 +24,12 @@ entrenador; las secciones, cifras reales (`169 sesiones en 12 bloques`). La `des
 que traía el importador —"Sesiones y recursos importados desde Word"— no se usa en ningún
 sitio: como meta description no dice nada y habría salido en los resultados.
 
+## Dónde se configura
+
+El sitio corre como **app Node.js en el plan Business de Hostinger** (Next.js figura como
+framework de backend compatible). Las variables se ponen en el panel de la app, no en un
+`.env` del repositorio. Ver `docs/DESPLIEGUE-HOSTINGER.md`.
+
 ## Variables de entorno necesarias
 
 ```env
