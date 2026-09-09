@@ -47,7 +47,9 @@ export const metadata: Metadata = {
       ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
       : undefined
   },
-  robots: {
+  // robots.txt solo desaconseja rastrear; esta etiqueta es la que impide indexar una
+  // URL que ya se conozca por otra via. Las dos hacen falta para cerrar el preview.
+  robots: process.env.NEXT_PUBLIC_NOINDEX === "1" ? { index: false, follow: false } : {
     index: true,
     follow: true,
     googleBot: {

@@ -2,7 +2,20 @@ import type { MetadataRoute } from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bestswim.es";
 
+/**
+ * Interruptor para entornos que no son el dominio definitivo.
+ *
+ * El dominio de preview de Hostinger (*.hostingersite.com) es publico: si Google lo
+ * rastrea, acaba compitiendo con bestswim.es por el mismo contenido. Con esto el
+ * despliegue de pruebas queda cerrado a los buscadores sin tocar codigo.
+ */
+const noIndex = process.env.NEXT_PUBLIC_NOINDEX === "1";
+
 export default function robots(): MetadataRoute.Robots {
+  if (noIndex) {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
+
   return {
     rules: [
       {
