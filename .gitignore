@@ -1,0 +1,38 @@
+node_modules
+.next
+out
+dist
+build
+.npm-cache
+.tools
+.verification
+.certs
+.env
+.env*.local
+coverage
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Local, no forma parte del despliegue
+.backup-pre-update-sept/
+.dev-logs/
+.claude/
+
+# Originales pesados de content-import: 232 MB de vídeo e imagen sin procesar.
+# El sitio NO sirve desde aquí, sirve desde public/import-assets/ (ya versionado).
+# Los .docx sí se versionan: son la fuente que leen los importadores.
+content-import/**/*.mp4
+content-import/**/*.MOV
+content-import/**/*.mov
+content-import/**/*.avi
+content-import/**/*.webm
+content-import/**/*.png
+content-import/**/*.jpg
+content-import/**/*.jpeg
+content-import/**/*.JPG
+content-import/**/*.heic
+content-import/**/*.HEIC

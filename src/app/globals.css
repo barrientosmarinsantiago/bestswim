@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 55% 6%;
+  --foreground: 204 100% 98%;
+  --card: 219 52% 9%;
+  --card-foreground: 204 100% 98%;
+  --primary: 188 100% 55%;
+  --primary-foreground: 222 62% 8%;
+  --muted: 218 30% 16%;
+  --muted-foreground: 216 22% 72%;
+  --accent: 225 100% 53%;
+  --accent-foreground: 204 100% 98%;
+  --border: 210 50% 92% / 0.14;
+  --input: 210 50% 92% / 0.18;
+  --ring: 188 100% 55%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #020a18;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(24, 216, 255, 0.14), transparent 34rem),
+    linear-gradient(180deg, #020a18 0%, #061327 50%, #020a18 100%);
+  color: hsl(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(24, 216, 255, 0.35);
+  color: #f7fbff;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(247, 251, 255, 0.1), rgba(247, 251, 255, 0.045));
+  border: 1px solid rgba(247, 251, 255, 0.14);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes bestswim-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.bestswim-marquee-track {
+  animation: bestswim-marquee-left 46s linear infinite;
+  will-change: transform;
+}
+
+.bestswim-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes bestswim-hero-fade {
+  from {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bestswim-content-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bestswim-modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bestswim-modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bestswim-value-seal-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bestswim-value-seal-text {
+  animation: bestswim-value-seal-spin 10s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

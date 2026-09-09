@@ -1,0 +1,3758 @@
+{
+  "generatedAt": "2026-09-09",
+  "sessions": [
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-nado-fraccionado-aem-aei",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "NADO FRACCIONADO A RITMO AEM/AEI",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-2-aem",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEM",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3100,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-aei",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEI",
+      "level": "intermedio",
+      "zone": "AEI",
+      "zones": [
+        "AEI"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2800,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-ael-velocidad",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEL + VEL",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3400,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-ael-aem-cambios-de-ritmo",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEL/AEM (cambio de ritmos)",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "cambios-ritmo",
+      "volumeM": 3150,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-ael-escalera",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEL ESCALERA",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "escalera",
+      "volumeM": 3700,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-ael-aem-aei-y-velocida-maxima-final",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEL/AEM/AEI/VELOCIDAD máxima final",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-ael",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEL - AEI",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEI"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-aem",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEM (aeróbico medio)",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-de-ael",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION DE AEL/AEM/AEI",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3300,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-escalera-ael-aem",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION ESCALERA AEL – AEM (aeróbico ligero - medio)",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-escalera-aem",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION AEM ESCALERA",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3100,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-fuerza-resistencia",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION FUERZA RESISTENCIA",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fuerza-resistencia",
+      "volumeM": 2700,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tuba",
+        "gomas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-snorkel-nivel-basico-intermedio-avanzado",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION SNORKEL (30 – 50% CON TUBA)",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "tecnica-snorkel",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-todas-las-zona-de-entrenamiento",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION TODAS LAS ZONA DE ENTRENAMIENTO (AEL/AEM/AEI/VELOCIDAD)",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3300,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado-sesion-tolerancia-lactica",
+      "groupId": "sesiones-zonas-de-entrenamiento-nivel-intermedio-avanzado",
+      "title": "SESION TOLERANCIA LACTICA",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-1-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 1 AEL Continuo Uniforme Extensivo",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3000,
+      "minutes": 30,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-2-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 2 AEL Continuo Uniforme Extensivo",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 6000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-3-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 3 AEL Continuo Uniforme Extensivo",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 7000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-3-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 3 AEL Intervalico Extensivo",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 6200,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-3-ael-intrevalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 3 AEL Intrevalico Extensivo",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 6500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-4-ael-intervalico-extensivo-2",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 4 AEL Intervalico Extensivo (2)",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 6500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-4-ael-intervalico-extensivo-3",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 4 AEL Intervalico Extensivo (3)",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 6900,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-5-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 5 AEL Fraccionamiento Distancias Largas",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 6600,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-6-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 6 AEL Fraccionamiento Distancias Largas",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 6000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-7-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 7 AEL Fraccionamiento Distancias Largas",
+      "level": "avanzado",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 6500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-8-ael-aem",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 8 Ael-aem",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "cambios-ritmo",
+      "volumeM": 6000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado-sesion-9-ael-aem",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-avanzado",
+      "title": "Sesión 9 Ael-aem",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "cambios-ritmo",
+      "volumeM": 5400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-1-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 1 AEL Continuo Uniforme Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2000,
+      "minutes": 30,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-10-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 10 AEL Continuo Uniforme Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2100,
+      "minutes": 40,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-11-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 11 AEL Continuo Uniforme Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 4900,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-12-ael-aem",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 12 Ael-aem",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-13-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 13 AEL Intervalico Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-2-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 2 AEL Continuo Uniforme Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3700,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-3-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 3 AEL Continuo Uniforme Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3400,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-3-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 3 AEL Intervalico Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4700,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-3-ael-intrevalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 3 AEL Intrevalico Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-4-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 4 AEL Intervalico Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-4-ael-intervalico-extensivo-3",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 4 AEL Intervalico Extensivo (3)",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-5-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 5 AEL Fraccionamiento Distancias Largas",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 3600,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-6-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 6 AEL Fraccionamiento Distancias Largas",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 4300,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-7-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 7 AEL Fraccionamiento Distancias Largas",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 4900,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-8-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 8 AEL Fraccionamiento Distancias Largas",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 4500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-8-ael-aem",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 8 Ael-aem",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio-sesion-9-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-intermedio",
+      "title": "Sesión 9 AEL Continuo Uniforme Extensivo",
+      "level": "intermedio",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-1-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 1 AEL Continuo Uniforme Extensivo",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 600,
+      "minutes": 20,
+      "intensity": 1,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-2-ael-continuo-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 2 AEL Continuo Uniforme Extensivo",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 1800,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-3-ael-contiuno-uniforme-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 3 AEL Contiuno Uniforme Extensivo",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-4-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 4 AEL Fraccionamiento Distancias Largas",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-5-ael-fraccionamiento-distancias-largas",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 5 AEL Fraccionamiento Distancias Largas",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "fraccionamiento-largo",
+      "volumeM": 2000,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-6-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 6 AEL Intervalico Extensivo",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 1900,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-7-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 7 AEL Intervalico Extensivo",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 1900,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-8-ael-intervalico-extensivo",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 8 AEL Intervalico Extensivo",
+      "level": "principiante",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 1800,
+      "minutes": null,
+      "intensity": 1,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-ael-ael-nivel-principiante-sesion-9-ael-aem",
+      "groupId": "sesiones-de-entrenamiento-ael-ael-nivel-principiante",
+      "title": "Sesión 9 Ael-aem",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-1-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 1 AEM Continuo Uniforme Intensivo",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 40,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-2-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 2 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 4300,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-3-aem-intervalico-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 3 AEM Intervalico Intensivo",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "intervalico-intensivo",
+      "volumeM": 4500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-4-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 4 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-7-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 7 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 800,
+      "minutes": 30,
+      "intensity": 2,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-9-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 9 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 4300,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-10-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 10 AEM Intervalico Extensivo 200 - 400m",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4900,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-11-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 11 AEM Intervalico Extensivo 200-400m",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-12-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 12 AEM Intervalico Extensivo 200 - 400m",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-13-aem-intervalico-extensivo-200m-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 13 AEM Intervalico Extensivo 200m- 400m",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4200,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-14-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 14 AEM Intervalico Extensivo 200-400m",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-15-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 15 AEM Escalera Descendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4400,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-16-aem-escalera-ascendente-y-descendente-aem-ael",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 16 AEM Escalera Ascendente Y Descendente AEM -ael",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4300,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-17-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 17 AEM Intervalico Extensivo 200-400m",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-18-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 18 AEM Escalera Ascendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4800,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-19-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 19 AEM Escalera Descendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-20-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 20 AEM Escalera Ascendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3800,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-21-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 21 AEM Escalera Ascendente",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEM",
+        "AEI"
+      ],
+      "method": "escalera",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-22-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 22 AEM Escalera",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4200,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-23-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 23 AEM Escalera Descendente",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4200,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-24-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 24 AEM Escalera Descendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-25-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 25 AEM Escalera Descendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4200,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-26-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 26 AEM Escalera",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-27-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 27 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 4300,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-28-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 28 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-29-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 29 AEM Escalera Descendente",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4400,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-30-aem-fuerza-resistencia",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 30 AEM (fuerza Resistencia)",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fuerza-resistencia",
+      "volumeM": 3800,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-31-escalera-ascendente-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 31 Escalera Ascendente - Descendente",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3800,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-32-escalera-ascendente-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 32 Escalera Ascendente - Descendente",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-33-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 33 AEM Escalera",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3900,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-34-aem-nado-distancia-larga-de-200m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 34 AEM (nado Distancia Larga De 200m)",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3700,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-35-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 35 AEM Continuo Uniforme Intensivo",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": 4600,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-36-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 36 AEM",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 4200,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 9,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-37-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 37 AEM",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 5500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-5-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 5 AEM Continuo Uniforme Intensivo",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-6-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 6 AEM Continuo Uniforme Intensivo",
+      "level": "avanzado",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 40,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado-sesion-8-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-avanzado",
+      "title": "Sesión 8 AEM Fartlek",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-1-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 1 AEM Continuo Uniforme Intensivo",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 30,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-2-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 2 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 3100,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-3-aem-intervalico-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 3 AEM Intervalico Intensivo",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "intervalico-intensivo",
+      "volumeM": 4000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-4-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 4 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 3500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-7-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 7 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 800,
+      "minutes": 30,
+      "intensity": 2,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-9-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 9 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 3200,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-10-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 10 AEM Intervalico Extensivo 200 - 400m",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3400,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-11-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 11 AEM Intervalico Extensivo 200-400m",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-12-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 12 AEM Intervalico Extensivo 200 - 400m",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-13-aem-intervalico-extensivo-200m-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 13 AEM Intervalico Extensivo 200m- 400m",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3300,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-14-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 14 AEM Intervalico Extensivo 200-400m",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-15-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 15 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-16-aem-escalera-ascendente-y-descendente-aem-ael",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 16 AEM Escalera Ascendente Y Descendente AEM -ael",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3200,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-17-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 17 AEM Intervalico Extensivo 200-400m",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-18-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 18 AEM Escalera Ascendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-19-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 19 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-20-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 20 AEM Escalera Ascendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 2800,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-21-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 21 AEM Escalera Ascendente",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEM",
+        "AEI"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-22-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 22 AEM Escalera",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3200,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-23-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 23 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3300,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-24-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 24 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-25-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 25 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-26-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 26 AEM Escalera",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-27-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 27 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 3200,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-28-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 28 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-29-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 29 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 2900,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-30-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 30 AEM Escalera Descendente",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 2900,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-31-escalera-ascendente-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 31 Escalera Ascendente - Descendente",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 2800,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-32-escalera-ascendente-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 32 Escalera Ascendente- Descendente",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-33-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 33 AEM Escalera",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 2850,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-34-aem-nado-distancia-larga-de-200m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 34 AEM (nado Distancia Larga De 200m)",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 2700,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-35-aem-fuerza-resistencia",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 35 AEM (fuerza Resistencia)",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fuerza-resistencia",
+      "volumeM": 2800,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-36-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 36 AEM",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3300,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-37-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 37 AEM",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 3250,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-5-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 5 AEM Continuo Uniforme Intensivo",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": 3000,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-6-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 6 AEM Continuo Uniforme Intensivo",
+      "level": "intermedio",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 40,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio-sesion-8-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-intermedio",
+      "title": "Sesión 8 AEM Fartlek",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 3500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-1-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 1 AEM Continuo Uniforme Intensivo",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": 1600,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 5,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-10-aem-escalera-descendente-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 10 AEM Escalera Descendente AEM",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1700,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-11-aem-escalera-ascendente-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 11 AEM Escalera Ascendente AEM",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1700,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-12-aem-escalera-ascendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 12 AEM Escalera Ascendente",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEM",
+        "AEI"
+      ],
+      "method": "escalera",
+      "volumeM": 1600,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-13-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 13 AEM Escalera",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-14-aem-escalera-descendente-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 14 AEM Escalera Descendente AEM",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1600,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-15-aem-escalera-descendente-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 15 AEM Escalera Descendente AEM",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1600,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-17-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 17 AEM Fartlek",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 1650,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 7,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-18-aem-escalera-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 18 AEM Escalera Descendente",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1700,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-19-ael-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 19 Ael-aem Escalera",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1800,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-2-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 2 AEM Continuo Uniforme Intensivo",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 20,
+      "intensity": 2,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-20-aem-fuerza-resistencia",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 20 AEM (fuerza Resistencia)",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fuerza-resistencia",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-21-aem-nado-distancias-larga-de-200m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 21 AEM (nado Distancias Larga De 200m)",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-22-aem-escalera",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 22 AEM Escalera",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1700,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-23-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 23 AEM Continuo Uniforme Intensivo",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 30,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-24-aem-continuo-uniforme-intensivo",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 24 AEM Continuo Uniforme Intensivo",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-intensivo",
+      "volumeM": null,
+      "minutes": 25,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-25-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 25 AEM Fartlek",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 600,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 1,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-26-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 26 AEM Fartlek",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-27-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 27 AEM Fartlek",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 1600,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-28-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 28 AEM",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 1400,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-29-aem",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 29 AEM",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "continuo-extensivo",
+      "volumeM": 1550,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 8,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-3-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 3 AEM Fartlek",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 500,
+      "minutes": 20,
+      "intensity": 2,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "palas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-4-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 4 AEM Fartlek",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-5-aem-fartlek",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 5 AEM Fartlek",
+      "level": "principiante",
+      "zone": "AEM",
+      "zones": [
+        "AEM"
+      ],
+      "method": "fartlek",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 2,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-6-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 6 AEM Intervalico Extensivo 200-400m",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-7-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 7 AEM Intervalico Extensivo 200-400m",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 1200,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 3,
+      "techHeavy": false,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-8-aem-intervalico-extensivo-200-400m",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 8 AEM Intervalico Extensivo 200-400m",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "intervalico-extensivo",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "pull"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-de-entrenamiento-aem-aem-nivel-principiante-sesion-9-aem-escalera-ascendente-y-descendente",
+      "groupId": "sesiones-de-entrenamiento-aem-aem-nivel-principiante",
+      "title": "Sesión 9 AEM Escalera Ascendente Y Descendente",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM"
+      ],
+      "method": "escalera",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 2,
+      "techHeavy": false,
+      "gear": [
+        "aletas",
+        "palas",
+        "pull",
+        "tabla",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-combinadas-ael-aem-aei-sesion-nivel-avanzado-ael-aem-aei",
+      "groupId": "sesiones-combinadas-ael-aem-aei",
+      "title": "Sesión Nivel Avanzado Ael-aem- AEI -",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "cambios-ritmo",
+      "volumeM": 5000,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-combinadas-ael-aem-aei-sesion-nivel-intermedio-ael-aem-aei",
+      "groupId": "sesiones-combinadas-ael-aem-aei",
+      "title": "Sesión Nivel Intermedio Ael-aem- AEI",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "cambios-ritmo",
+      "volumeM": 3300,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "sesiones-combinadas-ael-aem-aei-sesion-nivel-principiante-ael-aem-aei",
+      "groupId": "sesiones-combinadas-ael-aem-aei",
+      "title": "Sesión Nivel Principiante Ael-aem- AEI",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "cambios-ritmo",
+      "volumeM": 1500,
+      "minutes": null,
+      "intensity": 3,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [
+        "palas",
+        "tuba"
+      ],
+      "isTest": false
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-100m-test-100m-crol",
+      "groupId": "test-de-rendimiento-en-piscina-test-100m",
+      "title": "Test 100m Crol",
+      "level": "todos",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas",
+        "gomas"
+      ],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-cadencia-tempo-trainer-test-cadencia-tempo-trainer-mode-3",
+      "groupId": "test-de-rendimiento-en-piscina-test-cadencia-tempo-trainer",
+      "title": "Test Cadencia Tempo Trainer Mode 3",
+      "level": "todos",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-piscina-test-10x50m-nivel-intermedio",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-piscina",
+      "title": "Test 10x50m Nivel Intermedio",
+      "level": "intermedio",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-piscina-test-20x50m-y-14x50m-nivel-avanzado",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-piscina",
+      "title": "Test 20x50m Y 14x50m Nivel Avanzado",
+      "level": "avanzado",
+      "zone": "AEI",
+      "zones": [
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-piscina-test-8x50m-nivel-principiante",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-piscina",
+      "title": "Test 8x50m Nivel Principiante",
+      "level": "principiante",
+      "zone": "AEI",
+      "zones": [
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 0,
+      "techHeavy": false,
+      "gear": [],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-piscina-test-rendimiento-piscina-vo2max-nivel-avanzado",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-piscina",
+      "title": "Test Rendimiento Piscina VO2MAX Nivel Avanzado",
+      "level": "avanzado",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-piscina-test-rendimiento-piscina-vo2max-nivel-intermedio",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-piscina",
+      "title": "Test Rendimiento Piscina VO2MAX Nivel Intermedio",
+      "level": "intermedio",
+      "zone": "AEI",
+      "zones": [
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 11,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-piscina-test-rendimiento-piscina-vo2max-nivel-principiante",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-piscina",
+      "title": "Test Rendimiento Piscina VO2MAX Nivel Principiante",
+      "level": "principiante",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": 1200,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 6,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-velocidad-critica-test-velocidad-critica-200m",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-velocidad-critica",
+      "title": "Test Velocidad Critica 200m",
+      "level": "todos",
+      "zone": "MIXTA",
+      "zones": [
+        "AEL",
+        "AEM",
+        "AEI"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": true
+    },
+    {
+      "id": "test-de-rendimiento-en-piscina-test-de-velocidad-critica-test-velocidad-critica-400m-y-200m",
+      "groupId": "test-de-rendimiento-en-piscina-test-de-velocidad-critica",
+      "title": "Test Velocidad Critica 400m Y 200m",
+      "level": "todos",
+      "zone": "AEL",
+      "zones": [
+        "AEL"
+      ],
+      "method": "test",
+      "volumeM": null,
+      "minutes": null,
+      "intensity": 4,
+      "techLoad": 4,
+      "techHeavy": true,
+      "gear": [
+        "aletas"
+      ],
+      "isTest": true
+    }
+  ]
+}

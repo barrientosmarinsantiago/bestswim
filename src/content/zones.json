@@ -1,0 +1,64 @@
+{
+  "_doc": "Fuente ÚNICA del mapeo de colores por zona/intensidad de entrenamiento. La usan el render (src/content/zones.ts -> rich-content.tsx) y la validación (scripts/validate-sessions.mjs). Colores oficiales: content-import/Natacion/.../ZONAS DE ENTRENAMIENTO.docx. Las zonas numéricas (Z1-Z5 / 'ZONA 1'-'ZONA 5') mapean a la misma escala de intensidad: 1=AEL, 2=AEM, 3=AEI, 4=láctico, 5=aláctico.",
+  "codeColors": {
+    "AEL": "#0070C0",
+    "AEM": "#92D050",
+    "AEI": "#F79646",
+    "PAE": "#F79646",
+    "CSS": "#F79646",
+    "VO2MAX": "#F79646",
+    "Z1": "#0070C0",
+    "Z2": "#92D050",
+    "Z3": "#F79646",
+    "Z4": "#C00000",
+    "Z5": "#EE0000"
+  },
+  "phraseColors": [
+    { "phrase": "zona 1", "color": "#0070C0" },
+    { "phrase": "zona 2", "color": "#92D050" },
+    { "phrase": "zona 3", "color": "#F79646" },
+    { "phrase": "zona 4", "color": "#C00000" },
+    { "phrase": "zona 5", "color": "#EE0000" },
+    { "phrase": "velocidad máxima", "color": "#EE0000" },
+    { "phrase": "máxima velocidad", "color": "#EE0000" },
+    { "phrase": "anaeróbico aláctico", "color": "#EE0000" },
+    { "phrase": "anaeróbico láctico", "color": "#C00000" },
+    { "phrase": "sprint", "color": "#EE0000" }
+  ],
+  "textColors": {
+    "#0070C0": "#FFFFFF",
+    "#92D050": "#1F3D05",
+    "#F79646": "#4A1B0C",
+    "#C00000": "#FFFFFF",
+    "#EE0000": "#FFFFFF"
+  },
+  "legend": [
+    { "label": "Z1 · AEL", "color": "#0070C0", "name": "Zona 1 · Aeróbico ligero" },
+    { "label": "Z2 · AEM", "color": "#92D050", "name": "Zona 2 · Aeróbico medio" },
+    { "label": "Z3 · AEI", "color": "#F79646", "name": "Zona 3 · Aeróbico intenso · potencia aeróbica · velocidad crítica · VO2max" },
+    { "label": "Z4 · Láctico", "color": "#C00000", "name": "Zona 4 · Anaeróbico láctico" },
+    { "label": "Z5 · Vel. máx", "color": "#EE0000", "name": "Zona 5 · Anaeróbico aláctico (velocidad máxima)" }
+  ],
+  "ambiguous": [
+    {
+      "id": "velocidad-sin-tipo",
+      "pattern": "velocidad(?!\\s+(máxima|maxima|crítica|critica))",
+      "note": "'velocidad' suelta: aclara si es máxima (rojo), crítica (naranja=AEI) o suave (baja). Renombra a una frase exacta para que se coloree bien."
+    },
+    {
+      "id": "anaerobico-sin-tipo",
+      "pattern": "anaeróbic[oa](?!\\s+(láctic|alactic|aláctic|lactic))",
+      "note": "'anaeróbico' sin tipo: especifica 'láctico' (rojo oscuro) o 'aláctico' (rojo)."
+    },
+    {
+      "id": "vel-abreviado",
+      "pattern": "\\bVEL\\b",
+      "note": "'VEL' abreviado no se colorea (ambiguo). Usa 'velocidad máxima' o el código de zona correspondiente."
+    },
+    {
+      "id": "zona-fuera-de-rango",
+      "pattern": "\\bzona\\s+([67890]|1[0-9])\\b",
+      "note": "'zona' con número fuera de 1-5: revisa, solo Z1-Z5 tienen color definido."
+    }
+  ]
+}
