@@ -126,9 +126,10 @@ export function ClientPortal({ dictionary, locale }: { dictionary: Dictionary; l
   const [selectedCompetitionGoal, setSelectedCompetitionGoal] = useState<CompetitionGoal>("triatlon_sprint_olimpico");
   const [onboardingEditorOpen, setOnboardingEditorOpen] = useState(false);
   const [onboardingSaving, setOnboardingSaving] = useState(false);
-  const [statusMessage, setStatusMessage] = useState<string | null>(() =>
-    supabase ? null : dictionary.portal.supabaseMissing
-  );
+  // Sin inicializar con supabaseMissing: ese aviso ya lo pinta su propio bloque cuando
+  // falta Supabase, y duplicarlo aqui sacaba el mismo parrafo dos veces. Este estado es
+  // para los mensajes transitorios del login.
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(() => Boolean(supabase));
   const accessCopy = getAccessCopy(locale);
   const dashboardCopy = getDashboardCopy(locale);
