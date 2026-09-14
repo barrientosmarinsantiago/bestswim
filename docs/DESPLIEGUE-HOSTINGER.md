@@ -122,9 +122,25 @@ dominio inaccesible en los navegadores que ya lo visitaron.
 
 ## 4 · Webhook de Stripe
 
-Endpoint a `https://bestswim.es/api/stripe/webhook`, con los eventos
-`checkout.session.completed`, `customer.subscription.created|updated|deleted` y
-`payment_intent.succeeded`. El *signing secret* va a `STRIPE_WEBHOOK_SECRET`.
+Endpoint a `https://bestswim.es/api/stripe/webhook`, con exactamente los eventos que
+maneja `src/app/api/stripe/webhook/route.ts`:
+
+- `checkout.session.completed`
+- `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`
+- `invoice.paid`, `invoice.payment_failed`
+
+El *signing secret* (`whsec_...`) va a `STRIPE_WEBHOOK_SECRET`.
+
+### Los Payment Links (`buy.stripe.com/...`) no sirven para cobrar
+
+La app no usa enlaces de pago: crea una Checkout Session por API con el price ID y mete
+el `user_id` de Supabase en la metadata. Es lo único que permite al webhook saber **a
+quién** dar acceso. Un pago hecho por un Payment Link llega sin `user_id`, con un cliente
+de Stripe nuevo que no está en `profiles`, y el webhook lo descarta en silencio: cobro
+hecho, acceso ninguno. En el semanal además falta `metadata.plan = weekly`.
+
+Lo que hay que sacar de cada enlace es su **price ID**: *Catálogo de productos → producto
+→ sección Precios → `price_...`*. Conviene desactivar los enlaces para que nadie los use.
 
 Sin esto los pagos se cobran y **no se concede acceso**: la entitlement se otorga desde el
 webhook, no desde la redirección de vuelta del checkout.
