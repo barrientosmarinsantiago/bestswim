@@ -112,7 +112,7 @@ const baseDictionaries = {
         {
           title: "Aguas abiertas y triatlón",
           description: "Mejora tu técnica, condición física y habilidades acuáticas para tus competiciones.",
-          href: "/natacion/aguas-abiertas-triatlon"
+          href: "/natacion/aguas-abiertas-y-triatlon"
         },
         {
           title: "Oposiciones",
@@ -415,7 +415,7 @@ const baseDictionaries = {
         {
           title: "Open water and triathlon",
           description: "Improve your technique, fitness and water skills for your competitions.",
-          href: "/natacion/aguas-abiertas-triatlon"
+          href: "/natacion/aguas-abiertas-y-triatlon"
         },
         {
           title: "Public-service tests",
@@ -702,7 +702,7 @@ export const dictionaries = {
         {
           title: "Águas abertas e triatlo",
           description: "Melhore a sua técnica, condição física e habilidades aquáticas para as suas competições.",
-          href: "/natacion/aguas-abiertas-triatlon"
+          href: "/natacion/aguas-abiertas-y-triatlon"
         },
         {
           title: "Provas públicas",

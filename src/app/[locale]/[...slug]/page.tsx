@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ArrowLeft, Waves } from "lucide-react";
 import { PlaceholderSearchPage } from "@/components/content/placeholder-search-page";
 import { MultimediaPage } from "@/components/content/multimedia-page";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { sanitizeChallengeForLevel, sanitizeSectionForLevel } from "@/content/access";
 import type { ContentBlock } from "@/content/types";
-import { getChallengeByHref, getNatacionSectionByHref, watermarkSrc } from "@/content/imported-content";
+import { getAliasTarget, getChallengeByHref, getNatacionSectionByHref, watermarkSrc } from "@/content/imported-content";
 import { getLegalPage } from "@/content/legal";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -156,6 +156,14 @@ export default async function ContentPage({ params }: { params: Promise<{ locale
   const dictionary = getDictionary(locale);
   const slug = resolvedParams.slug.join("/");
   const href = `/${slug}`;
+
+  // Un alias servia el mismo contenido con su propio canonical: dos URL identicas
+  // compitiendo en buscadores. Se consolida con 308 en la canonica.
+  const aliasTarget = getAliasTarget(href);
+  if (aliasTarget) {
+    permanentRedirect(`/${locale}${aliasTarget}`);
+  }
+
   const trainingSection = getNatacionSectionByHref(href, locale);
   const challenge = getChallengeByHref(href, locale);
   const legalPage = getLegalPage(slug, locale);
@@ -193,6 +201,13 @@ export default async function ContentPage({ params }: { params: Promise<{ locale
     return (
       <MultimediaPage locale={locale} title={pageTitles[slug]?.[locale] || "Multimedia"} accessLevel={accessLevel} />
     );
+  }
+
+  // Solo las paginas anunciadas (con titulo propio) se sirven como "en preparacion".
+  // Cualquier otra ruta es un 404 real: devolver 200 hacia que cada URL mal escrita
+  // fuera una pagina valida y Google la marca como soft 404.
+  if (!pageTitles[slug]) {
+    notFound();
   }
 
   const title =

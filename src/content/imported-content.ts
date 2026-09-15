@@ -927,6 +927,11 @@ function splitImportedDocumentSessions(document: ImportedDocument) {
   return sessions;
 }
 
+/** Href canonico si `href` es un alias antiguo; undefined si ya es el bueno. */
+export function getAliasTarget(href: string) {
+  return hrefAliases[href];
+}
+
 export function getNatacionSectionByHref(href: string, locale: Locale = "es") {
   const normalizedHref = hrefAliases[href] || href;
   const section = natacionSections.find((item) => item.href === normalizedHref);
