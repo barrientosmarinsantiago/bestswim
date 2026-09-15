@@ -131,6 +131,13 @@ maneja `src/app/api/stripe/webhook/route.ts`:
 
 El *signing secret* (`whsec_...`) va a `STRIPE_WEBHOOK_SECRET`.
 
+**Versión de API del endpoint: `2024-06-20`**, la misma que fija `src/lib/stripe.ts`. Los
+eventos `customer.subscription.*` e `invoice.*` se procesan tal como llegan, con la forma
+de la versión del endpoint. Desde `2025-03-31` Stripe movió `current_period_end` a los
+items de la suscripción y `invoice.subscription` a `invoice.parent`: con un endpoint más
+nuevo la fecha de renovación se guarda vacía y los eventos de factura no hacen nada, sin
+dar error. Si algún día se sube la versión del SDK, hay que subir la del endpoint a la vez.
+
 ### Los Payment Links (`buy.stripe.com/...`) no sirven para cobrar
 
 La app no usa enlaces de pago: crea una Checkout Session por API con el price ID y mete
