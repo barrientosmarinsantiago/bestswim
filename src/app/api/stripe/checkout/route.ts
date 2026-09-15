@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getStripe, stripeErrorResponse } from "@/lib/stripe";
+import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { isRecurringPlan, type BillingPlan } from "@/lib/pricing";
 
@@ -74,12 +75,23 @@ export async function POST(request: NextRequest) {
       });
       stripeCustomerId = customer.id;
 
-      await supabase.from("profiles").upsert({
-        id: user.id,
-        email: user.email,
-        stripe_customer_id: stripeCustomerId,
-        updated_at: new Date().toISOString()
-      });
+      // Con el cliente de servicio, no con la sesion del usuario: la RLS de `profiles`
+      // prohibe (con razon) que un usuario cambie su propio `stripe_customer_id`, y con la
+      // sesion el update se descartaba en silencio. Cada intento de pago creaba entonces un
+      // cliente nuevo en Stripe y "Facturacion" nunca encontraba ninguno.
+      const admin = getSupabaseAdminClient();
+      const { error: saveError } = await (admin ?? supabase)
+        .from("profiles")
+        .upsert({
+          id: user.id,
+          email: user.email,
+          stripe_customer_id: stripeCustomerId,
+          updated_at: new Date().toISOString()
+        });
+
+      if (saveError) {
+        console.error("[stripe:checkout] no se pudo guardar stripe_customer_id", saveError.message);
+      }
     }
 
     const recurring = isRecurringPlan(plan);

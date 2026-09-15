@@ -41,8 +41,9 @@ export function CheckoutButton({
       }
 
       if (!response.ok || !data.url) {
-        const detail = data.code ? ` (${data.code})` : ` (HTTP ${response.status})`;
-        throw new Error((data.error || "Checkout failed.") + detail);
+        // El servidor ya incluye el codigo de Stripe en `error`; el HTTP solo hace falta
+        // cuando no llega cuerpo.
+        throw new Error(data.error || `Checkout failed (HTTP ${response.status}).`);
       }
 
       window.location.assign(data.url);

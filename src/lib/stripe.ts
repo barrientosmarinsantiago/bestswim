@@ -28,10 +28,14 @@ export function stripeErrorResponse(error: unknown, context: string) {
 
   console.error(`[stripe:${context}]`, stripeError ? `${stripeError.type} ${stripeError.code ?? ""} ${stripeError.param ?? ""} — ${stripeError.message}` : error);
 
+  const code = stripeError?.code ?? stripeError?.type ?? "unknown";
+
   return NextResponse.json(
     {
-      error: "Stripe rejected the request.",
-      code: stripeError?.code ?? stripeError?.type ?? "unknown",
+      // El codigo va tambien dentro del texto: un navegador con el JS anterior en cache solo
+      // muestra `error`, y sin el codigo el mensaje no permite diagnosticar nada.
+      error: `Stripe rejected the request (${code}${stripeError?.param ? ` · ${stripeError.param}` : ""}).`,
+      code,
       param: stripeError?.param
     },
     { status: 502 }

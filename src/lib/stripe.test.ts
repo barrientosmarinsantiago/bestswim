@@ -16,7 +16,7 @@ describe("stripeErrorResponse", () => {
 
     expect(response.status).toBe(502);
     expect(await response.json()).toEqual({
-      error: "Stripe rejected the request.",
+      error: "Stripe rejected the request (resource_missing · line_items[0][price]).",
       code: "resource_missing",
       param: "line_items[0][price]"
     });
