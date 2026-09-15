@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 import { NextResponse, type NextRequest } from "next/server";
 import Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
+import { getInvoiceSubscriptionId } from "@/lib/stripe-webhook";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
@@ -166,8 +167,18 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ received: true, duplicate: true });
   }
 
+  // Del evento solo se toma el ID; el objeto se vuelve a pedir con el SDK.
+  //
+  // El cuerpo de un evento tiene la forma de la version de API del ENDPOINT, que se elige
+  // en el panel de Stripe y alli solo se ofrecen las recientes (2026-*). Este codigo y sus
+  // tipos son de la version que fija `src/lib/stripe.ts` (2024-06-20), y entre ambas Stripe
+  // movio campos que aqui se leen: `current_period_end` paso a los items y
+  // `invoice.subscription` a `invoice.parent`. Leidos del evento, llegarian vacios sin dar
+  // error. Recuperados por API vuelven siempre con la forma de la version del SDK, asi que
+  // el webhook funciona con cualquier version de endpoint. De paso se procesa el estado
+  // actual del objeto y no el de un evento que haya llegado desordenado.
   if (event.type === "checkout.session.completed") {
-    const session = event.data.object as Stripe.Checkout.Session;
+    const session = await stripe.checkout.sessions.retrieve((event.data.object as { id: string }).id);
     const supabase = getSupabaseAdminClient();
 
     if (supabase && session.customer && session.metadata?.user_id) {
@@ -200,13 +211,12 @@ export async function POST(request: NextRequest) {
     event.type === "customer.subscription.updated" ||
     event.type === "customer.subscription.deleted"
   ) {
-    await upsertSubscription(event.data.object as Stripe.Subscription);
+    const subscription = await stripe.subscriptions.retrieve((event.data.object as { id: string }).id);
+    await upsertSubscription(subscription);
   }
 
   if (event.type === "invoice.payment_failed" || event.type === "invoice.paid") {
-    const invoice = event.data.object as Stripe.Invoice;
-    const subscriptionId =
-      typeof invoice.subscription === "string" ? invoice.subscription : invoice.subscription?.id;
+    const subscriptionId = getInvoiceSubscriptionId(event.data.object);
 
     if (subscriptionId) {
       const subscription = await stripe.subscriptions.retrieve(subscriptionId);
