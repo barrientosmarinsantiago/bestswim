@@ -30,10 +30,19 @@ export function CheckoutButton({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan, locale })
       });
-      const data = (await response.json()) as { url?: string; error?: string };
+      // Se lee como texto: si el servidor responde sin cuerpo (un 502 del proxy, por
+      // ejemplo), `response.json()` lanza "Unexpected end of JSON input" y tapa el estado.
+      const raw = await response.text();
+      let data: { url?: string; error?: string; code?: string } = {};
+      try {
+        data = raw ? (JSON.parse(raw) as typeof data) : {};
+      } catch {
+        // Cuerpo no JSON: se informa con el codigo HTTP.
+      }
 
       if (!response.ok || !data.url) {
-        throw new Error(data.error || "Checkout is not configured yet.");
+        const detail = data.code ? ` (${data.code})` : ` (HTTP ${response.status})`;
+        throw new Error((data.error || "Checkout failed.") + detail);
       }
 
       window.location.assign(data.url);

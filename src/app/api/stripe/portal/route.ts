@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isLocale } from "@/i18n/config";
-import { getStripe } from "@/lib/stripe";
+import { getStripe, stripeErrorResponse } from "@/lib/stripe";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -51,10 +51,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Stripe customer not found." }, { status: 404 });
   }
 
-  const session = await stripe.billingPortal.sessions.create({
-    customer: profile.stripe_customer_id,
-    return_url: `${siteUrl}/${locale}/clientes`
-  });
+  try {
+    const session = await stripe.billingPortal.sessions.create({
+      customer: profile.stripe_customer_id,
+      return_url: `${siteUrl}/${locale}/clientes`
+    });
 
-  return NextResponse.json({ url: session.url });
+    return NextResponse.json({ url: session.url });
+  } catch (error) {
+    return stripeErrorResponse(error, "portal");
+  }
 }

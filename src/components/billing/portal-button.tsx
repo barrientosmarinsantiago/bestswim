@@ -16,7 +16,8 @@ export function PortalButton({ locale, label }: { locale: Locale; label: string 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ locale })
     });
-    const data = (await response.json()) as { url?: string };
+    // `.catch`: con un cuerpo vacio `json()` lanzaria y el boton se quedaria cargando.
+    const data = (await response.json().catch(() => ({}))) as { url?: string };
 
     if (data.url) {
       window.location.assign(data.url);

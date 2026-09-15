@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isLocale, type Locale } from "@/i18n/config";
-import { getStripe } from "@/lib/stripe";
+import { getStripe, stripeErrorResponse } from "@/lib/stripe";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { isRecurringPlan, type BillingPlan } from "@/lib/pricing";
 
@@ -61,70 +61,74 @@ export async function POST(request: NextRequest) {
     .eq("id", user.id)
     .maybeSingle();
 
-  let stripeCustomerId = profile?.stripe_customer_id as string | null | undefined;
-  const email = (profile?.email as string | null | undefined) || user.email || undefined;
+  try {
+    let stripeCustomerId = profile?.stripe_customer_id as string | null | undefined;
+    const email = (profile?.email as string | null | undefined) || user.email || undefined;
 
-  if (!stripeCustomerId) {
-    const customer = await stripe.customers.create({
-      email,
-      metadata: {
-        supabase_user_id: user.id
-      }
-    });
-    stripeCustomerId = customer.id;
-
-    await supabase.from("profiles").upsert({
-      id: user.id,
-      email: user.email,
-      stripe_customer_id: stripeCustomerId,
-      updated_at: new Date().toISOString()
-    });
-  }
-
-  const recurring = isRecurringPlan(plan);
-
-  const session = await stripe.checkout.sessions.create({
-    // El pase semanal se cobra una sola vez: en modo "subscription" Stripe exige un
-    // precio recurrente y rechazaria el precio de pago unico con un 400.
-    mode: recurring ? "subscription" : "payment",
-    customer: stripeCustomerId,
-    client_reference_id: user.id,
-    line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${siteUrl}/${locale}/clientes?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${siteUrl}/${locale}/clientes?checkout=cancelled`,
-    allow_promotion_codes: true,
-    billing_address_collection: "auto",
-    customer_update: {
-      address: "auto",
-      name: "auto"
-    },
-    locale,
-    metadata: {
-      user_id: user.id,
-      plan
-    },
-    ...(recurring
-      ? {
-          subscription_data: {
-            metadata: {
-              user_id: user.id,
-              plan
-            }
-          }
+    if (!stripeCustomerId) {
+      const customer = await stripe.customers.create({
+        email,
+        metadata: {
+          supabase_user_id: user.id
         }
-      : {
-          payment_intent_data: {
-            metadata: {
-              user_id: user.id,
-              plan
+      });
+      stripeCustomerId = customer.id;
+
+      await supabase.from("profiles").upsert({
+        id: user.id,
+        email: user.email,
+        stripe_customer_id: stripeCustomerId,
+        updated_at: new Date().toISOString()
+      });
+    }
+
+    const recurring = isRecurringPlan(plan);
+
+    const session = await stripe.checkout.sessions.create({
+      // El pase semanal se cobra una sola vez: en modo "subscription" Stripe exige un
+      // precio recurrente y rechazaria el precio de pago unico con un 400.
+      mode: recurring ? "subscription" : "payment",
+      customer: stripeCustomerId,
+      client_reference_id: user.id,
+      line_items: [{ price: priceId, quantity: 1 }],
+      success_url: `${siteUrl}/${locale}/clientes?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${siteUrl}/${locale}/clientes?checkout=cancelled`,
+      allow_promotion_codes: true,
+      billing_address_collection: "auto",
+      customer_update: {
+        address: "auto",
+        name: "auto"
+      },
+      locale,
+      metadata: {
+        user_id: user.id,
+        plan
+      },
+      ...(recurring
+        ? {
+            subscription_data: {
+              metadata: {
+                user_id: user.id,
+                plan
+              }
             }
           }
-        })
-  });
+        : {
+            payment_intent_data: {
+              metadata: {
+                user_id: user.id,
+                plan
+              }
+            }
+          })
+    });
 
-  if (!session.url) {
-    return NextResponse.json({ error: "Stripe checkout URL was not created." }, { status: 502 });
+    if (!session.url) {
+      return NextResponse.json({ error: "Stripe checkout URL was not created." }, { status: 502 });
+    }
+
+    return NextResponse.json({ url: session.url });
+  } catch (error) {
+    return stripeErrorResponse(error, "checkout");
   }
-
-  return NextResponse.json({ url: session.url });
 }
