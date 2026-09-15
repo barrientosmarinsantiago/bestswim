@@ -7,10 +7,16 @@ import { isRecurringPlan, type BillingPlan } from "@/lib/pricing";
 
 export const runtime = "nodejs";
 
+// Se limpian espacios y comillas: un valor pegado en el panel del hosting como
+// `"price_..."` o con un espacio final llega tal cual y Stripe responde resource_missing.
+function cleanEnv(value: string | undefined) {
+  return value?.trim().replace(/^["']|["']$/g, "") || undefined;
+}
+
 function getPriceId(plan: BillingPlan) {
-  if (plan === "weekly") return process.env.STRIPE_WEEKLY_PRICE_ID;
-  if (plan === "annual") return process.env.STRIPE_ANNUAL_PRICE_ID;
-  return process.env.STRIPE_MONTHLY_PRICE_ID;
+  if (plan === "weekly") return cleanEnv(process.env.STRIPE_WEEKLY_PRICE_ID);
+  if (plan === "annual") return cleanEnv(process.env.STRIPE_ANNUAL_PRICE_ID);
+  return cleanEnv(process.env.STRIPE_MONTHLY_PRICE_ID);
 }
 
 function getSiteUrl(request: NextRequest) {
