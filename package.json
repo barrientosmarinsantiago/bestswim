@@ -12,6 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:content": "node scripts/validate-sessions.mjs",
+    "content:normalize": "node scripts/normalize-content.mjs",
     "prebuild": "node scripts/build-icons.mjs",
     "build:icons": "node scripts/build-icons.mjs",
     "seo:indexnow": "node scripts/indexnow.mjs"

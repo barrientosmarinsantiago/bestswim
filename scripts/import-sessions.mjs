@@ -17,6 +17,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
 import { inflateRawSync } from "node:zlib";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
+import { normalizeContent } from "./lib/normalize-content.mjs";
 
 const ROOT = process.cwd();
 const JSON_PATH = join(ROOT, "src", "content", "imported-content.json");
@@ -28,6 +29,7 @@ const DRY = process.argv.includes("--dry-run");
 const TOP_FOLDERS = [
   "SESIONES DE ENTRENAMIENTO AEL",
   "SESIONES DE ENTRENAMIENTO AEM",
+  "SESIONES DE ENTRENAMIENTO AEI",
   "SESIONES COMBINADAS AEL-AEM-AEI",
   "TEST DE RENDIMIENTO EN PISCINA"
 ];
@@ -291,8 +293,13 @@ function contentHash(doc) {
   return createHash("sha1").update(norm).digest("hex");
 }
 
+// Orden natural: `sort()` a secas ordena por caracteres y dejaba "SESION 10" delante de
+// "SESION 2", y "SESION 3" (sin tilde) delante de "SESIÓN 4". Este es el orden en que se
+// muestran en la web. `sensitivity: "base"` iguala Ó y O; `numeric` compara 2 < 10.
+const naturalOrder = new Intl.Collator("es", { numeric: true, sensitivity: "base" }).compare;
+
 function listDocx(dir) {
-  return readdirSync(dir).filter((f) => /\.docx$/i.test(f) && !f.startsWith("~$")).sort();
+  return readdirSync(dir).filter((f) => /\.docx$/i.test(f) && !f.startsWith("~$")).sort(naturalOrder);
 }
 function listSubdirs(dir) {
   return readdirSync(dir).filter((f) => { try { return statSync(join(dir, f)).isDirectory(); } catch { return false; } }).sort();
@@ -400,7 +407,10 @@ function main() {
   for (const g of groups) byId.set(g.id, { id: g.id, title: g.title, documents: g.documents });
   section.groups = Array.from(byId.values());
 
-  writeFileSync(JSON_PATH, JSON.stringify(json, null, 2) + "\n");
+  // Cabeceras en tabla y codigos de zona partidos: ver scripts/lib/normalize-content.mjs.
+  const { tree, stats } = normalizeContent(json);
+  console.log(`Normalizado: ${stats.headerTables} cabeceras en tabla, ${stats.healedRuns} codigos de zona reunidos, ${stats.recoloredRuns} tonos de zona a la paleta oficial, ${stats.phaseHeadings} cabeceras de fase, ${stats.demotedSentences} frases que no lo eran.`);
+  writeFileSync(JSON_PATH, JSON.stringify(tree, null, 2) + "\n");
   console.log(`\n✓ Escrito ${JSON_PATH}\n`);
 }
 

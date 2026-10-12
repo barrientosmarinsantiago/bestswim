@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { parseDocxFile, unwrapSingleColumnTables, cleanBlocks, deriveSummary, deriveTotal } from "./lib/docx.mjs";
+import { normalizeContent } from "./lib/normalize-content.mjs";
 
 const ROOT = process.cwd();
 const JSON_PATH = join(ROOT, "src", "content", "imported-content.json");
@@ -144,7 +145,10 @@ function main() {
   const j = JSON.parse(readFileSync(JSON_PATH, "utf8"));
   j.challenges = challenges;
   j.extraChallengeDocuments = [];
-  writeFileSync(JSON_PATH, JSON.stringify(j, null, 2) + "\n");
+  // Cabeceras en tabla y codigos de zona partidos: ver scripts/lib/normalize-content.mjs.
+  const { tree, stats } = normalizeContent(j);
+  console.log(`Normalizado: ${stats.headerTables} cabeceras en tabla, ${stats.healedRuns} codigos de zona reunidos, ${stats.recoloredRuns} tonos de zona a la paleta oficial, ${stats.phaseHeadings} cabeceras de fase, ${stats.demotedSentences} frases que no lo eran.`);
+  writeFileSync(JSON_PATH, JSON.stringify(tree, null, 2) + "\n");
   console.log(`\n✓ Escrito ${JSON_PATH}\n`);
 }
 

@@ -251,16 +251,37 @@ function RichTable({ block, light = false }: { block: Extract<ContentBlock, { ty
   );
 }
 
+/**
+ * Tabla de una fila con como mucho una celda con texto: en el Word es una cabecera de fase
+ * (WARM UP, MAIN SET…) maquetada como tabla. Se pinta como cabecera, con solo el texto; si
+ * no, una celda vacía al lado salía como una caja vacía. Misma regla que
+ * scripts/lib/normalize-content.mjs, que ya la aplica al importar: esto cubre el contenido
+ * que llegue sin pasar por ahí.
+ */
+function headerCellOf(block: Extract<ContentBlock, { type: "table" }>) {
+  if (block.rows.length !== 1) return null;
+  const filled = block.rows[0].filter((cell) => cell.text.trim());
+  return filled.length <= 1 ? (filled[0] ?? { text: "", runs: [] }) : null;
+}
+
 function ContentBlocks({ blocks, light = false }: { blocks: ContentBlock[]; light?: boolean }) {
   return (
     <div className="space-y-4">
-      {blocks.map((block, index) =>
-        block.type === "table" ? (
-          <RichTable key={`table-${index}`} block={block} light={light} />
-        ) : (
-          <Paragraph key={`paragraph-${index}-${block.text}`} block={block} light={light} />
-        )
-      )}
+      {blocks.map((block, index) => {
+        if (block.type === "table") {
+          const header = headerCellOf(block);
+          if (!header) return <RichTable key={`table-${index}`} block={block} light={light} />;
+          if (!header.text.trim()) return null;
+          return (
+            <Paragraph
+              key={`header-${index}-${header.text}`}
+              block={{ type: "paragraph", text: header.text.trim(), runs: header.runs, variant: "subheading" }}
+              light={light}
+            />
+          );
+        }
+        return <Paragraph key={`paragraph-${index}-${block.text}`} block={block} light={light} />;
+      })}
     </div>
   );
 }

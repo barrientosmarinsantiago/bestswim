@@ -1,5 +1,5 @@
 {
-  "_doc": "Fuente ÚNICA del mapeo de colores por zona/intensidad de entrenamiento. La usan el render (src/content/zones.ts -> rich-content.tsx) y la validación (scripts/validate-sessions.mjs). Colores oficiales: content-import/Natacion/.../ZONAS DE ENTRENAMIENTO.docx. Las zonas numéricas (Z1-Z5 / 'ZONA 1'-'ZONA 5') mapean a la misma escala de intensidad: 1=AEL, 2=AEM, 3=AEI, 4=láctico, 5=aláctico.",
+  "_doc": "Fuente ÚNICA del mapeo de colores por zona/intensidad de entrenamiento. `colorAliases`: tonos de la misma zona que traen algunos Word (cada tanda usó una variante: AEL azul claro, AEM verde, AEI ámbar o el naranja de Office 2023) y que scripts/lib/normalize-content.mjs convierte al oficial para que cada zona tenga un solo color en toda la web. La usan el render (src/content/zones.ts -> rich-content.tsx) y la validación (scripts/validate-sessions.mjs). Colores oficiales: content-import/Natacion/.../ZONAS DE ENTRENAMIENTO.docx. Las zonas numéricas (Z1-Z5 / 'ZONA 1'-'ZONA 5') mapean a la misma escala de intensidad: 1=AEL, 2=AEM, 3=AEI, 4=láctico, 5=aláctico.",
   "codeColors": {
     "AEL": "#0070C0",
     "AEM": "#92D050",
@@ -19,12 +19,24 @@
     { "phrase": "zona 3", "color": "#F79646" },
     { "phrase": "zona 4", "color": "#C00000" },
     { "phrase": "zona 5", "color": "#EE0000" },
+    { "phrase": "zona1", "color": "#0070C0" },
+    { "phrase": "zona2", "color": "#92D050" },
+    { "phrase": "zona3", "color": "#F79646" },
+    { "phrase": "zona4", "color": "#C00000" },
+    { "phrase": "zona5", "color": "#EE0000" },
+    { "phrase": "vo2 max", "color": "#F79646" },
     { "phrase": "velocidad máxima", "color": "#EE0000" },
     { "phrase": "máxima velocidad", "color": "#EE0000" },
     { "phrase": "anaeróbico aláctico", "color": "#EE0000" },
     { "phrase": "anaeróbico láctico", "color": "#C00000" },
     { "phrase": "sprint", "color": "#EE0000" }
   ],
+  "colorAliases": {
+    "#00B0F0": "#0070C0",
+    "#00B050": "#92D050",
+    "#FFC000": "#F79646",
+    "#E97132": "#F79646"
+  },
   "textColors": {
     "#0070C0": "#FFFFFF",
     "#92D050": "#1F3D05",

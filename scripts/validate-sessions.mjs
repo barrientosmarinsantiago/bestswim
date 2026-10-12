@@ -6,6 +6,7 @@
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { normalizeContent } from "./lib/normalize-content.mjs";
 
 const zones = JSON.parse(readFileSync(fileURLToPath(new URL("../src/content/zones.json", import.meta.url)), "utf8"));
 const content = JSON.parse(readFileSync(fileURLToPath(new URL("../src/content/imported-content.json", import.meta.url)), "utf8"));
@@ -63,10 +64,20 @@ for (const rule of zones.ambiguous) {
   console.log(`  [${rule.id}] ${matches.length} casos — ${rule.note}`);
 }
 
-console.log(`\nResumen: ${mappedTotal} términos con color · ${ambiguousTotal} ambiguos a revisar.`);
+// Lo que la normalización cambiaría es contenido que la web mostraría mal: cabeceras con una
+// caja vacía al lado, códigos de zona sin color, tonos fuera de paleta, cabeceras de fase en
+// distinto estilo según la sesión. Ver scripts/lib/normalize-content.mjs.
+const { stats } = normalizeContent(content);
+const pending = Object.values(stats).reduce((a, n) => a + n, 0);
+console.log("\nNormalización (cabeceras, códigos partidos, tonos de zona):");
+console.log(`  cabeceras en tabla: ${stats.headerTables} · códigos partidos: ${stats.healedRuns} · tonos fuera de paleta: ${stats.recoloredRuns} · cabeceras de fase sin caja: ${stats.phaseHeadings} · frases en caja: ${stats.demotedSentences}`);
+if (pending) console.log("  → ejecuta `npm run content:normalize` antes de publicar.");
 
-if (strict && ambiguousTotal > 0) {
-  console.error(`\n✗ --strict: ${ambiguousTotal} términos ambiguos. Renómbralos a frases exactas (ver docs/COLORES-ZONAS-ENTRENAMIENTO.md) antes de publicar.`);
+console.log(`\nResumen: ${mappedTotal} términos con color · ${ambiguousTotal} ambiguos a revisar · ${pending} pendientes de normalizar.`);
+
+if (strict && (ambiguousTotal > 0 || pending > 0)) {
+  if (ambiguousTotal > 0) console.error(`\n✗ --strict: ${ambiguousTotal} términos ambiguos. Renómbralos a frases exactas (ver docs/COLORES-ZONAS-ENTRENAMIENTO.md) antes de publicar.`);
+  if (pending > 0) console.error(`\n✗ --strict: ${pending} cambios de normalización pendientes. Ejecuta \`npm run content:normalize\`.`);
   process.exit(1);
 }
 
