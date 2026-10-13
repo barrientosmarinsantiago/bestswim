@@ -305,7 +305,38 @@ export function getTagValue(tags: string[] | null, prefix: string) {
   return tags?.find((tag) => tag.startsWith(prefix))?.slice(prefix.length) || null;
 }
 
-export function resolveOnboardingSessionDate(session: PortalTrainingSession, onboardingCompletedAt: string | null | undefined) {
+// Plan semanal (scripts/build-weekly-plan.mjs): las semanas 1-2 son de onboarding y el plan
+// empieza en la 3 (tag plan-week-3). Sus fechas en la base son solo de referencia: aquí se
+// recolocan sobre la semana de alta de cada cliente y, acabado el horizonte del plan, vuelve
+// a empezar, para que el portal no se quede nunca sin sesiones de la semana.
+export const PLAN_FIRST_WEEK = 3;
+export const WEEKLY_SESSION_LIMIT = 4;
+
+export function getPlanHorizonWeeks(sessions: PortalTrainingSession[]) {
+  const weeks = sessions
+    .map((session) => Number(getTagValue(session.tags, "plan-week-")))
+    .filter((week) => week >= PLAN_FIRST_WEEK);
+  return weeks.length ? Math.max(...weeks) - PLAN_FIRST_WEEK + 1 : 0;
+}
+
+export function resolveOnboardingSessionDate(
+  session: PortalTrainingSession,
+  onboardingCompletedAt: string | null | undefined,
+  planHorizonWeeks = 0,
+  today = new Date()
+) {
+  if (onboardingCompletedAt && planHorizonWeeks && session.tags?.includes("plan-semanal")) {
+    const week = Number(getTagValue(session.tags, "plan-week-"));
+    const day = Number(getTagValue(session.tags, "plan-day-") || "1");
+
+    if (week >= PLAN_FIRST_WEEK) {
+      const weekIndex = getWeekIndexFromOnboarding(onboardingCompletedAt, today);
+      const cycle = Math.max(0, Math.floor((weekIndex - (PLAN_FIRST_WEEK - 1)) / planHorizonWeeks));
+      const weekStart = startOfWeek(new Date(onboardingCompletedAt));
+      return formatDateKey(addDays(weekStart, (week - 1 + cycle * planHorizonWeeks) * 7 + (day - 1)));
+    }
+  }
+
   if (!onboardingCompletedAt || !session.tags?.includes("onboarding")) {
     return session.session_date;
   }
@@ -316,14 +347,15 @@ export function resolveOnboardingSessionDate(session: PortalTrainingSession, onb
   return formatDateKey(addDays(weekStart, (week - 1) * 7 + (day - 1)));
 }
 
-export function getWeekIndexFromOnboarding(onboardingCompletedAt: string | null | undefined) {
+export function getWeekIndexFromOnboarding(onboardingCompletedAt: string | null | undefined, today = new Date()) {
   if (!onboardingCompletedAt) {
     return 0;
   }
 
   const onboardingWeek = startOfWeek(new Date(onboardingCompletedAt)).getTime();
-  const currentWeek = startOfWeek(new Date()).getTime();
-  return Math.max(0, Math.floor((currentWeek - onboardingWeek) / (7 * 24 * 60 * 60 * 1000)));
+  const currentWeek = startOfWeek(today).getTime();
+  // Math.round y no floor: con un cambio de hora en medio, la semana dura una hora de más o de menos.
+  return Math.max(0, Math.round((currentWeek - onboardingWeek) / (7 * 24 * 60 * 60 * 1000)));
 }
 
 export function getWeeklyDrills(onboardingCompletedAt: string | null | undefined) {

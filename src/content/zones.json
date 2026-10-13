@@ -29,7 +29,19 @@
     { "phrase": "máxima velocidad", "color": "#EE0000" },
     { "phrase": "anaeróbico aláctico", "color": "#EE0000" },
     { "phrase": "anaeróbico láctico", "color": "#C00000" },
-    { "phrase": "sprint", "color": "#EE0000" }
+    { "phrase": "sprint", "color": "#EE0000" },
+    { "phrase": "zone 1", "color": "#0070C0" },
+    { "phrase": "zone 2", "color": "#92D050" },
+    { "phrase": "zone 3", "color": "#F79646" },
+    { "phrase": "zone 4", "color": "#C00000" },
+    { "phrase": "zone 5", "color": "#EE0000" },
+    { "phrase": "maximum speed", "color": "#EE0000" },
+    { "phrase": "anaerobic alactic", "color": "#EE0000" },
+    { "phrase": "anaerobic lactic", "color": "#C00000" },
+    { "phrase": "velocidade máxima", "color": "#EE0000" },
+    { "phrase": "máxima velocidade", "color": "#EE0000" },
+    { "phrase": "anaeróbio aláctico", "color": "#EE0000" },
+    { "phrase": "anaeróbio láctico", "color": "#C00000" }
   ],
   "colorAliases": {
     "#00B0F0": "#0070C0",

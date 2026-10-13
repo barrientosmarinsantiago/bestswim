@@ -33,9 +33,20 @@ function levelOf(groupId, text, title) {
   return m ? m[1].toLowerCase() : "todos";
 }
 
-/** Zona dominante. El MAIN SET manda: el calentamiento casi siempre es AEL y
- *  contaría en todas las sesiones si se mirara el documento entero. */
+/** Zona dominante.
+ *
+ *  Manda el TÍTULO, como con el nivel: el entrenador nombra cada sesión por su zona
+ *  objetivo ("Sesión 11 AEI…", "Sesión 8 AEL-AEM"). Leerla del MAIN SET clasificaba mal
+ *  las AEI de las tandas 4-5: tras el MAIN SET viene el COOL DOWN en AEL, y salían como
+ *  AEL o MIXTA. El MAIN SET queda como respaldo para títulos sin código. */
 function zoneOf(title, text) {
+  const declared = [...new Set((String(title).match(/\b(AEL|AEM|AEI|PAE)\b/gi) || []).map((z) => (z.toUpperCase() === "PAE" ? "AEI" : z.toUpperCase())))];
+  if (declared.length === 1) return { zone: declared[0], zones: declared };
+  if (declared.length > 1) return { zone: "MIXTA", zones: declared };
+  if (/combinar\s+todas\s+las\s+zonas/i.test(title)) return { zone: "MIXTA", zones: ["AEL", "AEM", "AEI", "VEL"] };
+
+  // El calentamiento casi siempre es AEL y contaría en todas las sesiones si se mirara el
+  // documento entero.
   const main = (text.split(/MAIN SET/i)[1] || text).slice(0, 1200);
   const has = (re) => re.test(main);
   const aei = has(/\bAEI\b|zona\s*3|aer[óo]bico intensivo/i);
@@ -50,13 +61,21 @@ function zoneOf(title, text) {
   return { zone: "AEL", zones: ["AEL"] };
 }
 
+// El orden importa: gana el primer patrón que casa. Los métodos AEI (tandas 4-5) van antes
+// que "interválico" genérico, y "descendentes" antes que "interválico intensivo".
 const METHODS = [
-  [/test/i, "test"],
+  [/combinar\s+todas\s+las\s+zonas/i, "combinada"],
   [/fuerza\s*resistencia/i, "fuerza-resistencia"],
+  [/series\s+(de\s+)?frecuencia\s+card[ií]aca/i, "series-fc"],
+  [/series\s+largas/i, "series-largas"],
+  [/repeticiones/i, "repeticiones"],
+  [/series\s+(de\s+)?distancias\s+cortas/i, "series-cortas"],
+  [/distancias\s+descendentes/i, "intervalico-descendente"],
   [/escalera/i, "escalera"],
   [/fartlek|continuo variable/i, "fartlek"],
   [/fraccionamiento\s+distancias\s+largas/i, "fraccionamiento-largo"],
-  [/interv[áa]lico\s+intensivo/i, "intervalico-intensivo"],
+  // "Intesivo": errata de los títulos de la sesión 4 AEI en los tres niveles.
+  [/interv[áa]lico\s+inten?sivo/i, "intervalico-intensivo"],
   [/interv[áa]lico/i, "intervalico-extensivo"],
   [/continuo\s+uniforme\s+intensivo|\(CI\)/i, "continuo-intensivo"],
   [/continuo\s+uniforme\s+extensivo|\(CE\)/i, "continuo-extensivo"],
@@ -64,9 +83,11 @@ const METHODS = [
   [/snorkel/i, "tecnica-snorkel"]
 ];
 function methodOf(title, text) {
-  const declared = (text.match(/M[ée]todos?\s*:?\s*([^\n]{3,80})/i) || [])[1] || "";
-  const hay = `${title} ${declared}`;
-  for (const [re, name] of METHODS) if (re.test(hay)) return name;
+  // Primero el título, solo: antes se mezclaba con la línea "Método:" del texto, y una
+  // frase como "ritmo obtenido en tu test de 400m" convertía la sesión en un test.
+  for (const [re, name] of METHODS) if (re.test(title)) return name;
+  const declared = (text.match(/M[ée]todos?\s*:\s*([^\n]{3,80})/i) || [])[1] || "";
+  for (const [re, name] of METHODS) if (re.test(declared)) return name;
   // El respaldo mira solo el MAIN SET: en el calentamiento aparecen tuba, aletas y
   // series cortas en casi todas las sesiones, y clasificarían por material en vez de
   // por el trabajo real de la sesión.
@@ -79,6 +100,10 @@ function methodOf(title, text) {
 function volumeOf(text) {
   const m = text.match(/(?:volumen\s*(?:de\s*la\s*)?sesi[óo]n|total)\s*:?\s*([\d][\d.,]*)\s*m\b/i);
   if (m) return Number(m[1].replace(/\./g, "").replace(",", ".")) || null;
+  // Sesiones con variantes ("Volumen sesión:" y debajo "opción A: 3.000m / opción B: 2.700m"):
+  // se planifica con la A, que es la principal.
+  const option = text.match(/opci[óo]n\s*A\s*:?\s*([\d][\d.,]*)\s*m\b/i);
+  if (option) return Number(option[1].replace(/\./g, "").replace(",", ".")) || null;
   return null;
 }
 function minutesOf(text) {
@@ -103,11 +128,13 @@ const INTENSITY = { AEL: 1, AEM: 2, AEI: 3, VEL: 5, MIXTA: 3 };
 function classify(doc, group) {
   const text = flat(doc);
   const { zone, zones } = zoneOf(doc.title, text);
-  const method = methodOf(doc.title, text);
+  // Test es lo que está en la carpeta de tests o se titula así, no lo que menciona un test
+  // ("ritmo obtenido en tu test de 400m" aparece en casi todas las AEI).
+  const isTest = /^test/i.test(doc.title) || /^test-de-rendimiento/.test(group.id);
+  const method = isTest ? "test" : methodOf(doc.title, text);
   const volume = volumeOf(text);
   const minutes = minutesOf(text);
   const tech = techLoadOf(text);
-  const isTest = method === "test" || /^test/i.test(doc.title);
   return {
     id: doc.id,
     groupId: group.id,

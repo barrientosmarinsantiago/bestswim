@@ -35,7 +35,11 @@ const contentLabels = {
     collapsibleSessions: "sesiones colapsables",
     contents: "contenidos",
     searchPlaceholder: "Buscar sesión",
-    noResults: "No se encontraron sesiones para"
+    noResults: "No se encontraron sesiones para",
+    intensity: "Intensidad",
+    coachCredit: ["Sesión de entrenamiento creada por", "Entrenador Superior de la RFEN"],
+    // Mismo orden que legend en zones.json; null = la etiqueta/nombre de zones.json.
+    zoneLegend: null
   },
   en: {
     swimming: "Swimming",
@@ -45,7 +49,16 @@ const contentLabels = {
     collapsibleSessions: "collapsible sessions",
     contents: "content items",
     searchPlaceholder: "Search session",
-    noResults: "No sessions found for"
+    noResults: "No sessions found for",
+    intensity: "Intensity",
+    coachCredit: ["Training session created by", "RFEN Senior Coach"],
+    zoneLegend: [
+      { label: "Z1 · AEL", name: "Zone 1 · Light aerobic" },
+      { label: "Z2 · AEM", name: "Zone 2 · Medium aerobic" },
+      { label: "Z3 · AEI", name: "Zone 3 · Intensive aerobic · aerobic power · critical speed · VO2max" },
+      { label: "Z4 · Lactic", name: "Zone 4 · Anaerobic lactic" },
+      { label: "Z5 · Max speed", name: "Zone 5 · Anaerobic alactic (maximum speed)" }
+    ]
   },
   pt: {
     swimming: "Natação",
@@ -55,7 +68,16 @@ const contentLabels = {
     collapsibleSessions: "sessões colapsáveis",
     contents: "conteúdos",
     searchPlaceholder: "Buscar sessão",
-    noResults: "Não foram encontradas sessões para"
+    noResults: "Não foram encontradas sessões para",
+    intensity: "Intensidade",
+    coachCredit: ["Sessão de treino criada por", "Treinador Superior da RFEN"],
+    zoneLegend: [
+      { label: "Z1 · AEL", name: "Zona 1 · Aeróbio ligeiro" },
+      { label: "Z2 · AEM", name: "Zona 2 · Aeróbio médio" },
+      { label: "Z3 · AEI", name: "Zona 3 · Aeróbio intensivo · potência aeróbia · velocidade crítica · VO2max" },
+      { label: "Z4 · Láctico", name: "Zona 4 · Anaeróbio láctico" },
+      { label: "Z5 · Vel. máx", name: "Zona 5 · Anaeróbio aláctico (velocidade máxima)" }
+    ]
   }
 } as const;
 
@@ -141,7 +163,9 @@ function ZoneAwareText({ text }: { text: string }) {
   );
 }
 
-function ZoneLegend({ light = false }: { light?: boolean }) {
+function ZoneLegend({ light = false, locale = "es" }: { light?: boolean; locale?: Locale }) {
+  const labels = contentLabels[locale];
+
   return (
     <div
       className={cn(
@@ -150,16 +174,16 @@ function ZoneLegend({ light = false }: { light?: boolean }) {
       )}
     >
       <span className={cn("font-semibold uppercase tracking-[0.14em]", light ? "text-[#155a82]" : "text-swim-steel")}>
-        Intensidad
+        {labels.intensity}
       </span>
-      {zoneLegend.map((zone) => (
+      {zoneLegend.map((zone, index) => (
         <span
           key={zone.label}
-          title={zone.name}
+          title={labels.zoneLegend?.[index]?.name ?? zone.name}
           className="inline-flex items-center rounded px-1.5 py-0.5 text-[0.85em] font-bold leading-none"
           style={{ backgroundColor: zone.color, color: zoneTextColor(zone.color) }}
         >
-          {zone.label}
+          {labels.zoneLegend?.[index]?.label ?? zone.label}
         </span>
       ))}
     </div>
@@ -438,7 +462,7 @@ export function SessionDisclosure({
         />
         <div className="relative z-10">
           <ContentBlocks blocks={document.blocks} light />
-          {coachCredit ? <CoachCredit /> : null}
+          {coachCredit ? <CoachCredit locale={locale} /> : null}
         </div>
       </div>
     </details>
@@ -446,11 +470,13 @@ export function SessionDisclosure({
 }
 
 // Crédito del entrenador al pie de cada sesión de entrenamiento.
-function CoachCredit() {
+function CoachCredit({ locale = "es" }: { locale?: Locale }) {
+  const [before, after] = contentLabels[locale].coachCredit;
+
   return (
     <p className="mt-6 border-t border-swim-ink/10 pt-3 text-xs italic leading-relaxed text-[#5a6b7b]">
-      Sesión de entrenamiento creada por{" "}
-      <span className="font-semibold not-italic text-[#243748]">Iván Santa Cruz</span> — Entrenador Superior de la RFEN
+      {before}{" "}
+      <span className="font-semibold not-italic text-[#243748]">Iván Santa Cruz</span> — {after}
     </p>
   );
 }
@@ -756,7 +782,7 @@ export function TrainingSectionPage({
         </section>
 
         <div className="mb-8">
-          <ZoneLegend />
+          <ZoneLegend locale={locale} />
         </div>
 
         <div className="grid gap-8">
@@ -808,7 +834,7 @@ export function ChallengePage({
       </section>
 
       <div className="section-shell grid gap-8 py-12">
-        <ZoneLegend />
+        <ZoneLegend locale={locale} />
         {challenge.intro ? (
           <Card className="glass-panel">
             <CardHeader>

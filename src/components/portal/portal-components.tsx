@@ -209,6 +209,7 @@ export function PortalSessionCard({
             title: title || importedDocument.title
           }}
           watermark={portalWatermark}
+          locale={locale}
         />
       ) : documentState === "loading" ? (
         <div className="rounded-md border border-white/10 bg-white/[0.07] p-4 text-sm text-swim-steel" aria-busy="true">

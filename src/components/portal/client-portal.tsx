@@ -77,7 +77,9 @@ import {
   formatWeekRange,
   getTagValue,
   resolveOnboardingSessionDate,
+  getPlanHorizonWeeks,
   getWeekIndexFromOnboarding,
+  WEEKLY_SESSION_LIMIT,
   getWeeklyDrills,
   formatKm,
   progressPercent,
@@ -99,6 +101,10 @@ import {
   OnboardingQuestionnaire
 } from "@/components/portal/portal-components";
 import { ProgressDashboard } from "@/components/portal/portal-progress";
+
+// Plan semanal (48 por nivel) + onboarding + desafíos de sus grupos. Con 96 el orden por fecha
+// dejaba fuera sesiones; un administrador ve todas las de todos los niveles.
+const TRAINING_SESSIONS_FETCH_LIMIT = 500;
 
 // Componentes de hoja en ./portal-components.tsx
 
@@ -189,13 +195,14 @@ export function ClientPortal({ dictionary, locale }: { dictionary: Dictionary; l
   const selectedCompetitionLabel =
     selectedTrainingGoal === "preparacion_competitiva" ? onboardingCopy.competitionGoals[selectedCompetitionGoal] : null;
   const performanceRegistrationDate = profileAccess?.created_at || onboardingCompletedAt;
+  const planHorizonWeeks = useMemo(() => getPlanHorizonWeeks(trainingSessions), [trainingSessions]);
   const scheduledTrainingSessions = useMemo(
     () =>
       trainingSessions.map((item) => ({
         ...item,
-        session_date: resolveOnboardingSessionDate(item, onboardingCompletedAt)
+        session_date: resolveOnboardingSessionDate(item, onboardingCompletedAt, planHorizonWeeks)
       })),
-    [onboardingCompletedAt, trainingSessions]
+    [onboardingCompletedAt, planHorizonWeeks, trainingSessions]
   );
   const currentWeekRange = useMemo(() => {
     const today = new Date();
@@ -251,7 +258,7 @@ export function ClientPortal({ dictionary, locale }: { dictionary: Dictionary; l
     const fallbackSessions = planTrainingSessions.slice(fallbackStart, fallbackStart + 3);
     return fallbackSessions.length ? fallbackSessions : planTrainingSessions.slice(0, 3);
   }, [currentWeekTrainingSessions, onboardingCompletedAt, planTrainingSessions]);
-  const visibleWeekTrainingSessions = useMemo(() => activeWeekTrainingSessions.slice(0, 3), [activeWeekTrainingSessions]);
+  const visibleWeekTrainingSessions = useMemo(() => activeWeekTrainingSessions.slice(0, WEEKLY_SESSION_LIMIT), [activeWeekTrainingSessions]);
   const challengeSessions = useMemo(
     () => scheduledTrainingSessions.filter(isChallengeSession).sort((first, second) => getSessionOrder(first) - getSessionOrder(second)),
     [scheduledTrainingSessions]
@@ -558,7 +565,7 @@ export function ClientPortal({ dictionary, locale }: { dictionary: Dictionary; l
         )
         .eq("published", true)
         .order("session_date", { ascending: true })
-        .limit(96);
+        .limit(TRAINING_SESSIONS_FETCH_LIMIT);
 
       if (error) {
         setStatusMessage(`${dictionary.portal.contentLoadError}: ${error.message}`);
@@ -677,7 +684,7 @@ export function ClientPortal({ dictionary, locale }: { dictionary: Dictionary; l
       )
       .eq("published", true)
       .order("session_date", { ascending: true })
-      .limit(96);
+      .limit(TRAINING_SESSIONS_FETCH_LIMIT);
 
     if (sessionsError) {
       setStatusMessage(`${dictionary.portal.contentLoadError}: ${sessionsError.message}`);
@@ -1190,7 +1197,7 @@ export function ClientPortal({ dictionary, locale }: { dictionary: Dictionary; l
                         ))}
                       </div>
                       {filteredTrainingSessions.length ? (
-                        filteredTrainingSessions.slice(0, 3).map((item) => {
+                        filteredTrainingSessions.slice(0, WEEKLY_SESSION_LIMIT).map((item) => {
                           const completed = completedSessionIds.includes(item.id);
 
                           return (
